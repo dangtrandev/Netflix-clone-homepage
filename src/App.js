@@ -1,7 +1,9 @@
 import React from "react"; 
+import "./App.css"; 
 import Header from "./components/Header/Header.js"
-import Banner from "./components/Banner/Banner.js"
 import Footer from "./components/Footer/Footer.js"
+import Homepage from "./Pages/Homepage"
+
 
 
 export default class App extends React.Component(){
@@ -16,7 +18,7 @@ export default class App extends React.Component(){
         return(
             <div id="container">
                 <Header />
-                <Banner />
+                <Homepage />
                 <Footer />
             </div>
         );
