@@ -1,5 +1,5 @@
 //where the api key will be contains 
-const api_key = "1651d7a28b7fb3b2e688cc7c829dca1b"; 
+const API_KEY = "1651d7a28b7fb3b2e688cc7c829dca1b"; 
 
 
 const requests = {
