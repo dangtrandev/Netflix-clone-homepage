@@ -1,0 +1,5 @@
+.homepage-container{
+    margin-top: var(--header-height); 
+    min-height: 100vh; 
+    /* we can scroll a little bit at the end of homepage */
+}
