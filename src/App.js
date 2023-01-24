@@ -1,12 +1,11 @@
 import React from "react"; 
 import "./App.css"; 
-import Header from "./components/Header/Header.js"
-import Footer from "./components/Footer/Footer.js"
-import Homepage from "./Pages/Homepage"
+import Homepage from "./Pages/Homepage/Homepage";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 
-
-export default function App(){
+export default function App() {
     return(
         <div id="container">
             <Header />

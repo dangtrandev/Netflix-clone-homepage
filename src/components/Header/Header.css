@@ -1,0 +1,9 @@
+.header-container{
+   height: var(--header-height); 
+   background-color: var(--transparent-bg); 
+   position: fixed; 
+   /* ensure when we scroll down it will stay in view */
+   top: 0; 
+   width: 100%; 
+   z-index: 1;
+}
