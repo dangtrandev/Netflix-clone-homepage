@@ -23,9 +23,12 @@ const base_url= "https://image.tmdb.org/t/p/w500"
             {/* title will be pass by using props */}
             <h2>{title}</h2>
             {/* a container will contains poster of each movie */}
-            <div className={`poster-container ${isLargeRow && "poster-container-large"}`}>
+            <div className="poster-container">
                {movies.map(
-                movie=>(<img key={movie.id} className="image-poster" src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name}/>)
+                movie=>(<img key={movie.id} 
+                    className={`image-poster ${isLargeRow && "image-poster-large"}`}
+                    src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} 
+                    alt={movie.name}/>)
                )}
             </div>
 
