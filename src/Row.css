@@ -1,0 +1,21 @@
+.poster-container{
+    display: flex; 
+    overflow-y: hidden; 
+    overflow-x: scroll; 
+}
+
+.image-poster{
+    object-fit: contain;
+    max-height: 150px;
+    width: 100%; 
+    transition: transform 450ms;
+    margin-right: 10px; 
+    padding: 20px; 
+}
+
+.image-poster::-webkit-scrollbar{
+    display:none; 
+}
+.image-poster:hover{
+    transform: scale(1.09); 
+}

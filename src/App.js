@@ -8,7 +8,7 @@ export default function App() {
     return(
         <div>
             {/* each row is one components */}
-            <Row  title="Netflix Original" fetchUrl={requests.fetchNetflixOrginals}/>
+            <Row  title="Up Coming" fetchUrl={requests.fetchUpComing}/>
             <Row  title="Trending Now" fetchUrl={requests.fetchTrending}/>
         </div>
     );

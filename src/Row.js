@@ -25,7 +25,7 @@ const base_url= "https://image.tmdb.org/t/p/w500"
             {/* a container will contains poster of each movie */}
             <div className="poster-container">
                {movies.map(
-                movie=>(<img className="image-poster" src={`${base_url}${movie.poster_path}`} alt={movie.name}/>)
+                movie=>(<img key={movie.key} className="image-poster" src={`${base_url}${movie.poster_path}`} alt={movie.name}/>)
                )}
             </div>
 
