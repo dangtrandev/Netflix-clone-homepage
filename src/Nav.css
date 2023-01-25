@@ -1,9 +1,14 @@
 .nav{
     position: fixed; 
     top: 0; 
-    width: 1005; 
+    width: 100%; 
     padding: 20px; 
     display: flex; 
+    justify-content: space-between;   
+}
+
+.nav_black{
+    background-color: #000; 
 }
 
 .nav_logo{
