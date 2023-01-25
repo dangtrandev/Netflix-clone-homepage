@@ -19,3 +19,9 @@
 .image-poster:hover{
     transform: scale(1.09); 
 }
+
+.poster-container-large{
+    display:flex; 
+    max-height: 250px; 
+    
+}
