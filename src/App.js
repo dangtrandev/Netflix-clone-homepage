@@ -2,12 +2,14 @@ import React from "react";
 import "./App.css"; 
 import Row from "./Row"; 
 import requests from "./request";
-import Banner from './Banner'
+import Banner from './Banner'; 
+import Nav from './Nav'; 
 
 export default function App() {
     return(
         <div className="app">
             {/* NavBar */}
+            <Nav />
             {/* banner */}
             <Banner />
             {/* each row is one components */}
