@@ -23,7 +23,7 @@ const base_url= "https://image.tmdb.org/t/p/w500"
     // console.log(movies); 
 
     //the style of video trailer 
-    const opts ={
+    const opts = {
         height: "390", 
         width: "100%",
         playerVars: {
@@ -32,19 +32,31 @@ const base_url= "https://image.tmdb.org/t/p/w500"
         }
     }
 
-    const handleClick = (movie) =>{
+    const handleClick = (movie) => {
         if (trailerUrl) {   //the trick to handle the double click from user 
             setTrailerUrl(''); 
         } else {
-            movieTrailer(movie?.name || "")
-            .then(url => {
-                // https://www.youtube.com/watch?v=534_TUled-4
-                const urlParameter = new URLSearchParams(new URL(url).search); 
-                setTrailerUrl(urlParameter.get('v')); 
-            })
-            .catch(error => console.log(error))
-        }
+    //         movieTrailer(movie?.name || "")
+    //         .then(url => {
+    //             // https://www.youtube.com/watch?v=534_TUled-4
+    //             const urlParameter = new URLSearchParams(new URL(url).search); 
+    //             console.log(urlParameter.get("v"));
+    //         })
+    //         .catch(error => console.log(error))
+    //     }
+    // }
+
+    // reference https://stackoverflow.com/questions/67766052/movie-trailer-npm-isnt-working-properly-in-my-netflix-clone-project
+    movieTrailer(null ,{ tmdbId: movie.id })
+                   .then((url)=>{
+                     console.log("url is "+url);
+                     const urlParams=new URLSearchParams(new URL(url).search);
+                     console.log("urlParamsn"+urlParams);
+                     setTrailerUrl(urlParams.get("v"));
+                   })
+                   .catch((error)=> console.log(error));
     }
+ }
     return(
         <div className="row-container">
             {/* title will be pass by using props */}
@@ -59,7 +71,7 @@ const base_url= "https://image.tmdb.org/t/p/w500"
                     alt={movie.name}/>)
                )}
             </div>
-            {trailerUrl &&<YouTube videoId={trailerUrl} opts={opts}/>}
+            {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}
         </div>
     ); 
 }
