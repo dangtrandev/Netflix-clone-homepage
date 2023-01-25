@@ -9,7 +9,7 @@ export default function App() {
         <div>
             {/* each row is one components */}
             {/* top rated will have the largest piture of movie  */}
-            <Row title="Top Rated"      fetchUrl={requests.fetchPopular}    isLargeRow/>
+            <Row title="Top Rated"      fetchUrl={requests.fetchPopular}    isLargeRow={true}/>
             <Row title="Popular"        fetchUrl={requests.fetchPopular}/>
             <Row title="Up Coming"      fetchUrl={requests.fetchUpComing}/>
             <Row title="Trending Now"   fetchUrl={requests.fetchTrending}/>

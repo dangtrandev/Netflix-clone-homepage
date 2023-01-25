@@ -22,5 +22,8 @@
 
 .poster-container-large{
     max-height: 250px; 
+}
 
+.poster-container-large:hover{
+    transform: scale(1.09);
 }
