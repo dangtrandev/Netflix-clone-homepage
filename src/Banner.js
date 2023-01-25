@@ -1,6 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import requests from "./request"; 
 import axios from "./axios"; 
+import "./Banner.css"; 
 
 
 function Banner() {
@@ -17,6 +18,11 @@ function Banner() {
     }, [])
     console.log(movies);
 
+    // the function will limmit amount of character will be displayed + {...}
+    function truncate(str, n) {
+        return str?.length > n ? str.substr(0, n-1) + "..." : str; 
+    }
+
 
   return (
     < header 
@@ -27,7 +33,7 @@ function Banner() {
         backgroundPosition:"center center", 
     }}>{/* Background Movie Poster */}
         <div className="banner_contents">
-            <h1>{/* title */}
+            <h1 className="banner_title">{/* title */}
                 {movies?.title || movies?.name || movies?.original_name}
             </h1>
 
@@ -35,7 +41,7 @@ function Banner() {
                 <button className="banner_button">Play</button>
                 <button className="banner_button">My List</button>
             </div>
-            <h1 className="banner_description">{movies?.overview}</h1>
+            <h1 className="banner_description">{truncate(movies?.overview, 150)}</h1>
         </div>
     </header>
   )
