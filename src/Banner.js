@@ -4,7 +4,8 @@ import axios from "./axios";
 
 
 function Banner() {
-    const [moives, setMovies] = useState([]); 
+    const baseUrl = "https://image.tmdb.org/t/p/trending/"; 
+    const [movies, setMovies] = useState([]); 
     // return the empty [] so that useEffect only run once the webpage is reloaded
     useEffect(() => {
         async function fetchData() {
@@ -18,11 +19,23 @@ function Banner() {
 
 
   return (
-    <header>
-        {/* Background Movie Poster */}
-        {/* title */}
-        {/* Two Button */}
-        {/* Description */}
+    < header 
+    className="banner"
+    style={{
+        backgroundSize: "cover", 
+        backgroundImage: `url(${baseUrl}${movies?.backdrop_path})`,
+        backgroundPosition:"center center", 
+    }}>{/* Background Movie Poster */}
+        
+        <h1>{/* title */}
+            {movies?.title || movies?.name || movies?.original_name}
+        </h1>
+
+        <div className="banner_buttons">{/* Two Button */}
+            <button className="banner_button">Play</button>
+            <button className="banner_button">My List</button>
+        </div>
+        <h1 className="banner_description">{movies?.overview}</h1>
     </header>
   )
 }
