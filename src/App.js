@@ -1,7 +1,7 @@
 import React from "react"; 
 import "./App.css"; 
 import Row from "./components/Row/Row"; 
-import request from "./request";
+import requests from "./request";
 
 
 export default function App() {

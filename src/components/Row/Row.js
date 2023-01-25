@@ -2,11 +2,11 @@ import { React, useState, useEffect } from 'react';
 import axios from "../../axios";
 
 
-export default function Row({ title , fetchURL }){
+export default function Row({ title , fetchUrl }){
     const [movie, setMovie] = useState([]); //giving the intial value is an empty array
     useEffect(()=>{
         async function fetchData(){
-            const request = await axios.get(fetchURL); 
+            const request = await axios.get(fetchUrl); 
             console.table(request.data.result); 
             setMovie(request.data.results);
             
