@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from "./axios";
 import "./Row.css"; 
 
+const base_url= "https://image.tmdb.org/t/p/w500"
  function Row({ title , fetchUrl }){
-    const [movie, setMovie] = useState([]); //giving the intial value is an empty array
+    const [movies, setMovies] = useState([]); //giving the intial value is an empty array
     
     // if [], the useEffect will only run once the page is loaded, won't run agains. 
     useEffect(() => {
@@ -11,19 +12,21 @@ import "./Row.css";
         async function fetchData(){
             const request = await axios.get(fetchUrl); 
             // console.log(request); 
-            setMovie(request.data.results); 
+            setMovies(request.data.results); 
             return request; 
         }
         fetchData(); 
     }, [fetchUrl]) //useEffect will re-run if the fectUrl is changed. 
-    // console.table(movie); 
+    console.log(movies); 
     return(
-        <div>
+        <div className="row-container">
             {/* title will be pass by using props */}
             <h2>{title}</h2>
             {/* a container will contains poster of each movie */}
-            <div>
-
+            <div className="poster-container">
+               {movies.map(
+                movie=>(<img className="image-poster" src={`${base_url}${movie.poster_path}`} alt={movie.name}/>)
+               )}
             </div>
 
 
