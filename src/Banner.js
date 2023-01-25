@@ -32,7 +32,7 @@ function Banner() {
         backgroundImage: `url("${baseUrl}${movies?.backdrop_path}")`,
         backgroundPosition:"center center", 
     }}>{/* Background Movie Poster */}
-        <div className="banner_contents">
+        <div className="banner_contens">
             <h1 className="banner_title">{/* title */}
                 {movies?.title || movies?.name || movies?.original_name}
             </h1>
@@ -43,6 +43,7 @@ function Banner() {
             </div>
             <h1 className="banner_description">{truncate(movies?.overview, 150)}</h1>
         </div>
+        <div className="banner--fadeBottom"/>
     </header>
   )
 }

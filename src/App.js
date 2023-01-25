@@ -6,7 +6,7 @@ import Banner from './Banner'
 
 export default function App() {
     return(
-        <div>
+        <div className="app">
             {/* NavBar */}
             {/* banner */}
             <Banner />
