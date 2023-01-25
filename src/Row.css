@@ -13,7 +13,7 @@
     padding: 20px; 
 }
 
-.image-poster::-webkit-scrollbar{
+.poster-container::-webkit-scrollbar{
     display:none; 
 }
 .image-poster:hover{
