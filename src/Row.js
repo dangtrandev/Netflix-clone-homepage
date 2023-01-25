@@ -16,6 +16,7 @@ import "./Row.css";
         }
         fetchData(); 
     }, [fetchUrl]) //useEffect will re-run if the fectUrl is changed. 
+    // console.table(movie); 
     return(
         <div>
             {/* title will be pass by using props */}
